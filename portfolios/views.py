@@ -4,6 +4,6 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return render(request, "makes_portfolio/layout.html", {
+    return render(request, "makers_portfolio/index.html", {
         
     })
