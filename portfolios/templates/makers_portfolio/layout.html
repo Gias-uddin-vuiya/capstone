@@ -2,15 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Gias Uddin Vuiya{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="shortcut icon" href="../../static/portfolios/images/fav-icon.png" type="image/x-icon">
+     <title>{% block title %}Gias Uddin Vuiya{% endblock %}</title>
 </head>
 <body>
+
     <header>
-        <h1>My Website</h1>
-        <nav>
-            <a href="">Home</a>
-            <a href="">About</a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                
+                <!-- Left side brand -->
+                <a class="navbar-brand" href="#">
+                <img src="../../static/portfolios/images/image.png" 
+                alt="Gias uddin"
+                class="rounded-circle" width="40" height="40">
+                <span class="fw-semibold">Gias Uddin Vuiya</span>
+                </a>
+
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Right side nav items -->
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item border-end">
+                        <a class="nav-link active" href="#">Resume</a>
+                    </li>
+
+                    <li class="nav-item border-end">
+                        <a class="nav-link active" href="#">Project</a>
+                    </li>
+                    <li class="nav-item border-end">
+                        <a class="nav-link active" href="#">Outreach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Personal</a>
+                    </li>
+                </ul>
+                </div>
+
+            </div>
         </nav>
     </header>
 
@@ -38,5 +73,6 @@
         </div>
         
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
