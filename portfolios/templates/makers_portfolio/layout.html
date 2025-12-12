@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +17,7 @@
                 
                 <!-- Left side brand -->
                 <a class="navbar-brand" href="#">
-                <img src="../../static/portfolios/images/image.png" 
+                <img src="{% static 'portfolios/images/image.png' %}" 
                 alt="Gias uddin"
                 class="rounded-circle" width="40" height="40">
                 <span class="fw-semibold">Gias Uddin Vuiya</span>
@@ -55,24 +57,36 @@
         {% endblock %}
     </main>
 
-    <footer>
-        <hr/>
-        <div style="display: flex; justify-content: space-around;">
-            <div class="contact-address">
-                <h4>Email</h4>
-                <p>giasuddinvuiya2022 [at] gmail.com</p>
-            </div>
-            <div class="github-link">
-                <h4>Github</h4>
-                <p>https://github.com/Gias-uddin-vuiya</p>
-            </div>
-            <div class="linkedin-link">
-                <p>&copy; 2025 My Django Project</p>
-                <p>https://www.linkedin.com/in/gias-uddin-vuiya-2b4b2521b/</p>
+    <footer class="footer bottom bg-light py-3">
+        <div class="container">
+            <div class="border border-success mb-3"></div>  
+            <div class="row text-center text-md-start">
+
+                <div class="col-12 col-md-4 mb-2">
+                    <h6 class="">Email</h6>
+                    <p class="mb-0 text-success">giasuddinvuiya2022 [at] gmail.com</p>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <h6>GitHub</h6>
+                    <a href="https://github.com/Gias-uddin-vuiya" class="text-decoration-none text-success" target="_blank">
+                        github.com/Gias-uddin-vuiya
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4 mb-2">
+                    <h6>LinkedIn</h6>
+                    <a href="https://www.linkedin.com/in/gias-uddin-vuiya-2b4b2521b/" class="text-decoration-none text-success" target="_blank">
+                        Visit profile
+                    </a>
+                    <p class="text-success mb-0">&copy; 2025 My protfolio</p>
+                </div>
+
             </div>
         </div>
-        
     </footer>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
