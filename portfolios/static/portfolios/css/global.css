@@ -4,3 +4,37 @@ body{
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
+
+
+/* Profile design */
+.profile-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.circlebg {
+    width: 400px;
+    height: 400px;
+    background-image: url('../images/circlebg.png'); /* brush ring */
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.circleImage {
+    width: 375px;
+    height: 375px;
+    background-image: url('../images/profile-bg-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
