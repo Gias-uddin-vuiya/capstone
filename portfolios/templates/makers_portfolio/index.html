@@ -1,12 +1,13 @@
 {% extends 'makers_portfolio/layout.html' %}
 {% load static %}
 
+
 {% block title %}Gias Uddin Vuiya - Portfolio{% endblock %}
 
 {% block content %}
    <section>
     <div class="container d-flex justify-content-center align-items-center mt-auto mb-auto py-5"> 
-        <div class="row d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-around align-items-center">
 
             <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
                <div class="profile-wrapper">
@@ -17,9 +18,15 @@
             </div>
 
             <div class="col-md-6">
-                <h1>Gias uddin vuiya</h1>
-                <h4>A bit about me</h4>
-                <p class="text-success fs-8">
+
+                <h1 class="text-success">Gias uddin vuiya</h1>
+                <!-- <h4>A bit about me</h4> -->
+                <!-- import icon here -->
+                {% include "makers_portfolio/icons/arrow.html"%}
+                
+               
+
+                <p class="text-success fs-8 mt-3 ml-2">
                     I am a Computer Science graduate from Princeton University with a passion for software development and open-source contributions. 
                     My journey in tech began during my undergraduate studies, where I honed my skills in various programming languages and frameworks. 
                     I am enthusiastic about building innovative solutions that make a difference and am always eager to collaborate on exciting projects.
