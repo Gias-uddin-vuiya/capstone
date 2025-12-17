@@ -2,9 +2,10 @@ body{
     margin: 0;
     min-height: 100vh;
     padding: 0;
-    font-family: Arial, sans-serif;
+    color: #008566;
+    background-color: #f9fafa;
+    font-family: 'Poppins', sans-serif;
 }
-
 
 
 /* Profile design */
@@ -39,3 +40,38 @@ body{
     border-radius: 50%;
 }
 
+/* project here design */
+
+.project-btn {
+    background-color: #008566;
+    color: white;
+}   
+
+.project-btn:hover {
+    background-color: #fff;
+    
+    border: 1px solid #008566;
+}
+
+.hero-title {
+    margin-top: 20px;
+  font-size: 58px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.1;
+  color: #008566; /* Bootstrap success green tone */
+  text-transform: uppercase;
+}
+
+.hero-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #0a8f6a;
+  max-width: 480px;
+}
+
+.hero-img-wrapper img {
+    width: 100%;
+    max-width: none;
+    background: #008566;
+}
