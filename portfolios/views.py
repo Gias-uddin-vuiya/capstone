@@ -7,3 +7,9 @@ def index(request):
     return render(request, "makers_portfolio/index.html", {
         
     })
+
+
+def projects(request):
+    return render(request, "makers_portfolio/projects.html", {  
+        
+    })
