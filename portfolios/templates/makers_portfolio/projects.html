@@ -1,0 +1,49 @@
+{% extends 'makers_portfolio/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Gias Uddin Vuiya - Projects
+{% endblock %}
+
+{% block header %}
+    
+{% endblock %}
+
+
+{% block content %}
+    <section class="vh-100 w-100 position-relative d-flex align-items-center justify-content-center overflow-hidden" style="background-color: #007a5a;">
+    
+    <img 
+        src="{% static 'portfolios/images/projects-page-img.png' %}" 
+        alt="Project Image"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
+    >
+
+    <div class="position-absolute top-0 start-50 translate-middle-x mt-4" style="z-index: 10;">
+        <a href="/project" class="text-white text-decoration-none fs-2 fw-bold">×</a>
+    </div>
+
+    <div class="container position-relative" style="z-index: 5;">
+        <ul class="nav justify-content-center gap-5">
+            <li class="nav-item">
+                <a class="nav-link text-black fs-5 fw-light p-0" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fs-5 fw-light p-0" href="#">Science</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fs-5 fw-light p-0" href="#">English</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fs-5 fw-light p-0" href="#">Art</a>
+            </li>
+        </ul>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+
