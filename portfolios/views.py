@@ -9,7 +9,7 @@ def index(request):
     })
 
 
-def projects(request):
-    return render(request, "makers_portfolio/projects.html", {  
+def project(request):
+    return render(request, "makers_portfolio/project.html", {  
         
     })
