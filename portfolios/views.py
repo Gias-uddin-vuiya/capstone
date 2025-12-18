@@ -9,6 +9,11 @@ def index(request):
     })
 
 
+def project(request):
+    return render(request, "makers_portfolio/project.html", {  
+        
+    })
+
 def projects(request):
     return render(request, "makers_portfolio/projects.html", {  
         

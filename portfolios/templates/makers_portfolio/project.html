@@ -1,0 +1,48 @@
+{% extends 'makers_portfolio/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Gias Uddin Vuiya - Project
+{% endblock %}
+
+{% block content %}
+    <section  class="min-vh-100 d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+
+        <!-- LEFT CONTENT -->
+        <div class="col-md-6">
+            {% include "makers_portfolio/icons/arrow.html" %}
+
+            <h1 class="hero-title mb-4">
+            MY SCHOOL <br> PROJECT
+            </h1>
+
+            <p class="hero-text mb-4">
+            Hi there, and welcome aboard my exciting 9th grade journey.
+            As part of my graduation project, I decided to publish my latest
+            projects and assignments on this site. I’ve spent countless hours
+            and sleepless nights putting it together and am very excited to
+            share it with you.
+            <span class="border-bottom">Read on to find out more.</span>
+            </p>
+
+            <a href="{% url 'projects' %}" class="project-btn btn rounded-pill px-4 py-2">
+            See The Projects
+            </a>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="col-md-6 text-end  hero-img-wrapper">
+            <img
+            src="{% static 'portfolios/images/project-page-img.png' %}"
+            class="img-fluid "
+            alt="Project Image"
+            >
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+{% endblock %}
