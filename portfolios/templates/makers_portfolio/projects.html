@@ -16,23 +16,23 @@
     <img 
         src="{% static 'portfolios/images/projects-page-img.png' %}" 
         alt="Project Image"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;  z-index: 1;"
     >
 
     <div class="position-absolute top-0 start-50 translate-middle-x mt-4" style="z-index: 10;">
-        <a href="/project" class="text-white text-decoration-none fs-2 fw-bold">×</a>
+        <a href="{% url 'project' %}" class="text-white text-decoration-none fs-2 fw-bold">×</a>
     </div>
 
     <div class="container position-relative" style="z-index: 5;">
         <ul class="nav justify-content-center gap-5">
             <li class="nav-item">
-                <a class="nav-link text-black fs-5 fw-light p-0" href="#">Home</a>
+                <a class="nav-link text-black fs-5 fw-light p-0" href="{% url 'index' %}">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white fs-5 fw-light p-0" href="#">Science</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white fs-5 fw-light p-0" href="#">English</a>
+                <a class="nav-link text-white fs-5 fw-light p-0" href="{% url 'english' %}">English</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white fs-5 fw-light p-0" href="#">Art</a>
