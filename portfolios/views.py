@@ -24,3 +24,8 @@ def english(request):
     return render(request, "makers_portfolio/english-project.html", {  
         
     })
+
+def art(request):
+    return render(request, "makers_portfolio/art-project.html", {  
+        
+    })
