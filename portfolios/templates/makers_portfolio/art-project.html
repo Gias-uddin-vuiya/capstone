@@ -1,0 +1,203 @@
+{% extends "makers_portfolio/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Gias Uddin Vuiya - Art Project
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-expand-lg  py-3">
+        <div class="container">
+            
+            <!-- Left side brand -->
+            <a class="navbar-brand" href="/">
+                <span class="text-success fs-4">Name: </span>
+                <span class=" border-bottom">Gias Uddin Vuiya</span>
+            </a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Right side nav items -->
+            <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active text-success border-bottom" href="{% url 'projects' %}">Menu</a>
+                </li>
+            </ul>
+            </div>
+
+        </div>
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        <div class="container">
+          <div class="part-1 py-5 d-flex justify-content-between align-items-start gap-5">
+                <div class="left-side">
+               <div class="py-4">
+                    {% include "makers_portfolio/icons/arrow.html"%}
+               </div>
+                <h1 class="mb-4" style="font-size: 64px;">ART</h1>
+                <h2 class="py-3" style="font-size: 26px;">The Assignment</h2>
+                <p class="font_8 wixui-rich-text__text" >
+                    This is a great space to update your audience with information about your what’s the assignment. Give them specific details like what was the subject, thesis and time limitation etc.<br class="wixui-rich-text__text">
+                    <br class="wixui-rich-text__text">
+                    I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br class="wixui-rich-text__text">
+                    <br class="wixui-rich-text__text">
+                    This is a great space to write a long text about your project or essay. You can use this space to go into a little more detail about your research and conclusions, dilemmas and thoughts. Talk about your process, resources and takeaways. Tell your readers the the story of how you came up with the idea for your project and what makes it unique, comprehensive and thought-provoking.<br class="wixui-rich-text__text">
+                    <br class="wixui-rich-text__text">
+                    At Wix we’re passionate about making templates that allow you to build fabulous websites and it’s all thanks to the support and feedback from users like you! Keep up to date with New Releases and what’s Coming Soon in Wixellaneous in Support. Feel free to tell us what you think and give us feedback in the Wix Forum. If you’d like to benefit from a professional designer’s touch, head to the Wix Arena and connect with one of our Wix Pro designers. Or if you need more help you can simply type your questions into the Support Forum and get instant answers. To keep up to date with everything Wix, including tips and things we think are cool, just head to the Wix Blog!
+                </p>
+                </div>
+                <div class="right-side" style="background-color: #e7c4fb;">
+
+                        <img 
+                            src="{% static 'portfolios/images/art-project-img-1.png' %}" 
+                            alt="" width="490" height="1200" style="width: 703px; height: 1200px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
+                        />
+                </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>  
+
+          <div class="part-2 py-5 d-flex justify-content-between align-items-start gap-5">
+                <div class="left-side">
+                    <h2 class="py-3">My Goal</h2>
+                    <p class="font_8 wixui-rich-text__text">After countless hours of hard work, I am finally proud to share my finished art projects with you.&nbsp;<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br class="wixui-rich-text__text">
+                        ​<br class="wixui-rich-text__text">
+                        This is a great space to write a long text about your project or essay. You can use this space to go into a little more detail about your research and conclusions, dilemmas and thoughts. Talk about your process, resources and takeaways. Tell your readers the the story of how you came up with the idea for your project and what makes it unique, comprehensive and thought-provoking.&nbsp;<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        At Wix we’re passionate about making templates that allow you to build fabulous websites and it’s all thanks to the support and feedback from users like you! Keep up to date with New Releases and what’s Coming Soon in Wixellaneous in Support. Feel free to tell us what you think and give us feedback in the Wix Forum. If you’d like to benefit from a professional designer’s touch, head to the Wix Arena and connect with one of our Wix Pro designers. Or if you need more help you can simply type your questions into the Support Forum and get instant answers. To keep up to date with everything Wix, including tips and things we think are cool, just head to the Wix Blog!
+                    </p>
+                </div>
+                <div class="right-side" >
+                    <h2  class="py-3">Final Look</h2>
+                    <p class="font_8 wixui-rich-text__text">This is the conclusion of your project. It’s where you sum up all of your main ideas and offer a final perspective. In a few sentences, review your strongest points and reinforce the assertion you made in your introduction.<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br class="wixui-rich-text__text">
+                        ​<br class="wixui-rich-text__text">
+                        This is a great space to write a long text about your project or essay. You can use this space to go into a little more detail about your research and conclusions, dilemmas and thoughts. Talk about your process, resources and takeaways. Tell your readers the the story of how you came up with the idea for your project and what makes it unique, comprehensive and thought-provoking.&nbsp;<br class="wixui-rich-text__text">
+                        &nbsp;<br class="wixui-rich-text__text">
+                        At Wix we’re passionate about making templates that allow you to build fabulous websites and it’s all thanks to the support and feedback from users like you! Keep up to date with New Releases and what’s Coming Soon in Wixellaneous in Support. Feel free to tell us what you think and give us feedback in the Wix Forum. If you’d like to benefit from a professional designer’s touch, head to the Wix Arena and connect with one of our Wix Pro designers. Or if you need more help you can simply type your questions into the Support Forum and get instant answers. To keep up to date with everything Wix, including tips and things we think are cool, just head to the Wix Blog!
+                    </p>
+                </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>
+
+          <div class="part-3 py-5 d-flex justify-content-between align-items-start gap-5">
+               <div class="left-side" style="background-color: #ff5c46;">
+                    <img  
+                        class="pb-3"
+                        loading="lazy" sizes="467px" 
+                        id="img_comp-l2da24bu" 
+                        src="{% static 'portfolios/images/art-project-img-2.png' %}" 
+                        width="489" height="667" style="width: 701px; height: 667px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
+                    />
+                </div>
+                <div class="right-side" >
+                   <h2  class="py-3">Bibliography</h2>
+                    <p class="font_8 wixui-rich-text__text">If you cited books or other works in your project, this is where you can list them alphabetically.<br class="wixui-rich-text__text">
+                        Citing works gives your readers the information needed to find your sources on their own. This information includes: author, title, publishing company, publish date, and page number of material used.<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        Author’s last name, author’s first name. Title. City of publication: publisher, copyright date. Medium of Publication.<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        Editor’s last name, editor’s first name, ed. Title. Place of publication: publisher, copyright date. Medium of publication.<br class="wixui-rich-text__text">
+                        <br class="wixui-rich-text__text">
+                        “Name of article.” Title of encyclopedia. Place of publication: publisher, copyright date.
+                    </p>
+
+                    <button type="button" class="btn btn-outline-success mt-4">Download PDF</button>
+                
+                </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>
+
+          <div>
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                
+                   <img 
+                        src="{% static 'portfolios/images/caresoul-image-1.png' %}" 
+                        class="d-block w-100 carousel-img"
+                        alt="Slide image"
+                    />
+
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static 'portfolios/images/caresoul-image-2.png' %}" 
+                class="d-block w-100" alt="..."
+                >
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <img src="{% static 'portfolios/images/caresoul-image-3.png' %}"  
+                class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            </div>
+          </div>
+          
+          <div class="divider mt-3 mb-3 border border-success"></div>
+
+          <div class="py-3 text-success">
+           <nav aria-label="Project navigation ">
+                <ul class="pagination justify-content-between align-items-center">
+
+                    <li class="page-item">
+                        <a class="page-link border-0 bg-transparent p-0 text-success fw-medium" href="#">
+                            {% include "makers_portfolio/icons/left-arrow.html"%} Previous Project
+                        </a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link border-0 bg-transparent p-0 text-success fw-medium" href="#">
+                            Next Project
+                            <span class="d-inline-block ms-1" style="transform: rotate(180deg);">
+                            {% include "makers_portfolio/icons/right-arrow.html" %}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+          </div>
+
+          <div>
+        </div>
+    </section>
+    
+{% endblock %}
