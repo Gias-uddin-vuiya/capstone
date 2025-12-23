@@ -18,14 +18,18 @@
             </div>
 
             <div class="col-md-6">
-                <h1>Gias uddin vuiya</h1>
+                <h1>{{ profile.name }}</h1>
+                <h6>{{ profile.title }}</h6>
                 <!-- import icon here -->
                 {% include "makers_portfolio/icons/arrow.html"%}
+                
+                <!-- {{ profile.icons|safe }} -->
+                
+                <!-- about section -->
                 <p class="mt-3 ml-2">
-                    I am a Computer Science graduate from Princeton University with a passion for software development and open-source contributions. 
-                    My journey in tech began during my undergraduate studies, where I honed my skills in various programming languages and frameworks. 
-                    I am enthusiastic about building innovative solutions that make a difference and am always eager to collaborate on exciting projects.
+                    {{ profile.about }}
                 </p>
+                
             </div>
 
         </div>
