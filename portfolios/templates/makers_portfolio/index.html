@@ -11,8 +11,8 @@
 
             <div class="col-md-4 text-center text-md-start mb-4 mb-md-0">
                <div class="profile-wrapper">
-                    <div class="circlebg">
-                        <div class="circleImage"></div>
+                    <div class="circlebg" style="background-image: url('{{ profile.profile_bg_img.url }}')">
+                        <div class="circleImage" style="background-image: url('{{ profile.profile_img.url }}')"></div>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,6 @@
                 <h6>{{ profile.title }}</h6>
                 <!-- import icon here -->
                 {% include "makers_portfolio/icons/arrow.html"%}
-                
-                <!-- {{ profile.icons|safe }} -->
                 
                 <!-- about section -->
                 <p class="mt-3 ml-2">
