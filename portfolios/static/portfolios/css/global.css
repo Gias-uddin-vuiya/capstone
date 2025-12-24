@@ -18,7 +18,6 @@ body{
 .circlebg {
     width: 400px;
     height: 400px;
-    background-image: url('../images/circlebg.png'); /* brush ring */
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -33,7 +32,6 @@ body{
 .circleImage {
     width: 375px;
     height: 375px;
-    background-image: url('../images/profile-bg-img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
