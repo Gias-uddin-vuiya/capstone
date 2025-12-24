@@ -22,3 +22,17 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+class Porject(models.Model):
+    title = models.CharField(max_length=128)
+    description = models.TextField()
+    cover_img = models.ImageField(
+        upload_to='projects/',
+        default='projects/default-project.png',
+        blank=True
+    )
+    button_text = models.CharField(max_length=32)
+    
+
+    def __str__(self):
+        return self.title

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Profile
+from .models import Profile, Porject
 
 # Create your views here.
 
@@ -13,8 +13,9 @@ def index(request):
 
 
 def project(request):
+    project_page = Porject.objects.all()
     return render(request, "makers_portfolio/project.html", {  
-        
+        "project_page": project_page
     })
 
 def projects(request):
