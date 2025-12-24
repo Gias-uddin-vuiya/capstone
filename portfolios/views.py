@@ -20,7 +20,7 @@ def project(request):
 
 def projects(request):
     return render(request, "makers_portfolio/projects.html", {  
-        
+
     })
 
 # english project
