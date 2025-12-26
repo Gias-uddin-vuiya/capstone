@@ -3,6 +3,8 @@
     {% include "makers_portfolio/projects/"|add:project.slug|add:".html" with details=details project=project %}
 {% elif project.slug == 'science' %}
     {% include "makers_portfolio/projects/"|add:project.slug|add:".html" with details=details project=project %}
+{% elif project.slug == 'art' %}
+    {% include "makers_portfolio/projects/"|add:project.slug|add:".html" with details=details project=project %}
 {% else %}
     <h2>Project not found</h2>
 {% endif %}

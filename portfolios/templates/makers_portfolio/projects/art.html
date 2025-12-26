@@ -1,0 +1,128 @@
+{% extends "makers_portfolio/layout.html" %}
+{% load static %}
+
+{% block title %}
+    Gias Uddin Vuiya - Science Project
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-expand-lg  py-3">
+        <div class="container">
+            
+            <!-- Left side brand -->
+            <a class="navbar-brand" href="/">
+                <span class="text-success fs-4">Name: </span>
+                <span class=" border-bottom">Gias Uddin Vuiya</span>
+            </a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Right side nav items -->
+            <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li class="nav-item">
+                    <a class="nav-link active text-success border-bottom" href="{% url 'projects' %}">Menu</a>
+                </li>
+            </ul>
+            </div>
+
+        </div>
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        <div class="container">
+          <div class="part-1 py-5 d-flex justify-content-between align-items-start gap-5">
+                <div class="left-side">
+               <div class="py-4">
+                    {% include "makers_portfolio/icons/arrow.html"%}
+               </div>
+                <h1 class="mb-4" style="font-size: 64px;">{{details.p_name }}</h1>
+                <h2 class="py-3" style="font-size: 26px;">{{details.p_title }}</h2>
+                <p class="font_8 wixui-rich-text__text" >
+                    {{ details.p_desc }}
+                </p>
+                </div>
+                <div class="right-side" style="background-color: #e7c4fb;">
+                    <img 
+                        src="{{ details.p_main_img.url }}" 
+                        alt="" width="490" height="1200" style="width: 703px; height: 1200px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
+                    />
+                </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>  
+
+          <div class="part-2 py-5 d-flex justify-content-between align-items-start gap-5">
+                <div class="left-side">
+                    <h2 class="py-3">{{ details.p_goal_title }}</h2>
+                    <p class="font_8 wixui-rich-text__text" style="font-size:16px;">This is the introduction to your project. It’s where you offer an overview of the main ideas you’ll be presenting. Begin by outlining the topic you’ve chosen, and then continue by explaining your specific point of view or argument.&nbsp;<br class="wixui-rich-text__text">
+                        {{ details.p_goal_desc }}
+                    </p>
+                </div>
+                <div class="right-side" >
+                    <h2  class="py-3">{{ details.p_final_look_title }}</h2>
+                        {{ details.p_final_look_desc }}
+                    </p>
+                </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>
+
+          <div class="part-3 py-5 d-flex justify-content-between align-items-start gap-5">
+                <div class="left-side" >
+                    <img  
+                        class="pb-3"
+                        loading="lazy" sizes="467px" 
+                        id="img_comp-l2da24bu" 
+                        src="{{ details.p_bibliography_img_1.url }}" 
+                        alt="" class="BI8PVQ Tj01hh" width="600" height="600" style="object-fit: cover; background-color: #ff5c46;"
+                    />
+                </div>
+                <div class="right-side" >
+                    <h2  class="py-3">{{ details.p_bibliography_title }}</h2>
+                   <p class="font_8 wixui-rich-text__text">
+                        {{ details.p_bibliography_desc }}
+                    </p>
+                    <button type="button" class="btn btn-outline-success mt-4">Download PDF</button>
+            </div>
+          </div>
+
+          <div class="divider mt-3 mb-3 border border-success"></div>
+
+
+          <div class="divider mt-3 mb-3 border border-success"></div>
+          
+          <div class="py-3 text-success">
+           <nav aria-label="Project navigation ">
+                <ul class="pagination justify-content-between align-items-center">
+
+                    <li class="page-item">
+                        <a class="page-link border-0 bg-transparent p-0 text-success fw-medium" href="#">
+                            {% include "makers_portfolio/icons/left-arrow.html"%} Previous Project
+                        </a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link border-0 bg-transparent p-0 text-success fw-medium" href="#">
+                            Next Project
+                            <span class="d-inline-block ms-1" style="transform: rotate(180deg);">
+                            {% include "makers_portfolio/icons/right-arrow.html" %}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+          </div>
+
+          <div>
+        </div>
+    </section>
+    
+{% endblock %}
