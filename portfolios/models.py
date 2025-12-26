@@ -46,6 +46,15 @@ class Projects(models.Model):
         return self.name
 
 class Project_details(models.Model):
+
+    project = models.OneToOneField(
+        Projects,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="details"
+    )
+
     p_name =  models.CharField(max_length=100)
     p_title = models.CharField(max_length=200)
     p_desc = models.TextField()

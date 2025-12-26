@@ -28,18 +28,18 @@
             <li class="nav-item">
                 <a class="nav-link text-black fs-5 fw-light p-0" href="{% url 'index' %}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white fs-5 fw-light p-0" href="#">Science</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white fs-5 fw-light p-0" href="{% url 'english' %}">English</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white fs-5 fw-light p-0" href="{% url 'art' %}">Art</a>
-            </li>
 
             <!-- I  will add the projects dinamically later on -->
-           
+            {% for project in projects %}
+                <li class="nav-item">
+                    <a 
+                        class="nav-link text-white fs-5 fw-light p-0" 
+                        href="{% url 'project_detail' project.slug %}"
+                        >{{ project.name }}
+                        
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 

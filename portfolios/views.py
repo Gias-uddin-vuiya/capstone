@@ -20,25 +20,15 @@ def project(request):
 
 def projects(request):
     projects = Projects.objects.filter(isActive=True)
-    return render(request, "makers_portfolio/projects.html", {  
+    return render(request, "makers_portfolio/projects.html", {
         "projects": projects
     })
 
-# will work here later
-# def project_detail(request, slug):
-#     project = get_object_or_404(Projects, slug=slug, isActive=True)
-#     return render(request, "makers_portfolio/project_detail.html", {
-#         "project": project
-#     })
+    
+def project_detail(request, slug):
+    project = get_object_or_404(Projects, slug=slug, isActive=True)
 
-
-# english project
-def english(request):
-    return render(request, "makers_portfolio/english-project.html", {  
-        
-    })
-
-def art(request):
-    return render(request, "makers_portfolio/art-project.html", {  
-        
+    return render(request, "makers_portfolio/project_detail.html", {
+        "project": project,
+        "details": project.details  # comes from OneToOneField
     })

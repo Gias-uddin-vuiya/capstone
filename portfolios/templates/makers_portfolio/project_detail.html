@@ -1,20 +1,6 @@
-{% extends 'makers_portfolio/layout.html' %}
 
-{% block title %}
-    {{ project.name }}
-{% endblock %}
+{% if project.slug == "english" %}
+    {% include "makers_portfolio/projects/"|add:project.slug|add:"-project.html" with details=details project=project %}
 
-{% block content %}
-<section class="container py-5">
-    <h1 class="fw-bold">{{ project.name }}</h1>
+{% endif %}
 
-    <p class="text-muted">
-        Project slug: {{ project.slug }}
-    </p>
-
-    <!-- Later you can add -->
-    <!-- description -->
-    <!-- tech stack -->
-    <!-- screenshots -->
-</section>
-{% endblock %}
