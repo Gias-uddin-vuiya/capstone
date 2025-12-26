@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Profile, Porject
+from .models import Profile, Porject, Projects  
 
 # Create your views here.
 
@@ -19,9 +19,18 @@ def project(request):
     })
 
 def projects(request):
+    projects = Projects.objects.filter(isActive=True)
     return render(request, "makers_portfolio/projects.html", {  
-
+        "projects": projects
     })
+
+# will work here later
+# def project_detail(request, slug):
+#     project = get_object_or_404(Projects, slug=slug, isActive=True)
+#     return render(request, "makers_portfolio/project_detail.html", {
+#         "project": project
+#     })
+
 
 # english project
 def english(request):
