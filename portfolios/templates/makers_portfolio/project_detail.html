@@ -1,6 +1,9 @@
 
-{% if project.slug == "english" %}
-    {% include "makers_portfolio/projects/"|add:project.slug|add:"-project.html" with details=details project=project %}
-
+{% if project.slug ==  'english' %}
+    {% include "makers_portfolio/projects/"|add:project.slug|add:".html" with details=details project=project %}
+{% elif project.slug == 'science' %}
+    {% include "makers_portfolio/projects/"|add:project.slug|add:".html" with details=details project=project %}
+{% else %}
+    <h2>Project not found</h2>
 {% endif %}
 
