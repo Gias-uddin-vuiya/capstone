@@ -93,10 +93,32 @@
             </div>
           </div>
 
-          <div class="divider mt-3 mb-3 border border-success"></div>
+        <div class="divider mt-3 mb-3 border border-success"></div>
 
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for img in details.carousel_images.all %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <img src="{{ img.image.url }}" class="d-block w-100" alt="">
+                    {% if img.caption %}
+                    <div class="carousel-caption d-none d-md-block">
+                        <p>{{ img.caption }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
 
-          <div class="divider mt-3 mb-3 border border-success"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <div class="divider mt-3 mb-3 border border-success"></div>
           
           <div class="py-3 text-success">
            <nav aria-label="Project navigation ">

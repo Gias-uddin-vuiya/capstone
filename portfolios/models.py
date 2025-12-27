@@ -79,3 +79,18 @@ class Project_details(models.Model):
 
     def __str__(self):
         return self.p_name
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey(
+        Project_details,
+        on_delete=models.CASCADE,
+        related_name="carousel_images"
+    )
+
+    image = models.ImageField(upload_to="project_details_img/carousel/", null=True, blank=True)
+    caption = models.CharField(max_length=255, blank=True, null=True)
+
+    order = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.project.p_name} Image {self.order}"
