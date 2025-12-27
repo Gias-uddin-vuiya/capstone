@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Profile, Porject, Projects  
+from .models import Profile, Porject, Projects, ProjectImage  
 
 # Create your views here.
 
@@ -31,4 +31,11 @@ def project_detail(request, slug):
     return render(request, "makers_portfolio/project_detail.html", {
         "project": project,
         "details": project.details  # comes from OneToOneField
+    })
+
+def project_image_detail(request, slug):
+    image = ProjectImage.objects.select_related("project").get(slug=slug)
+
+    return render(request, "makers_portfolio/projects/image_detail.html", {
+        "image": image
     })

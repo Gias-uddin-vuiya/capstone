@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class Profile(models.Model):
@@ -88,9 +89,18 @@ class ProjectImage(models.Model):
     )
 
     image = models.ImageField(upload_to="project_details_img/carousel/", null=True, blank=True)
-    caption = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    
 
     order = models.PositiveIntegerField(default=0)
 
+    slug = models.SlugField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(f"{self.project.p_name}-{self.title}-{self.order}")
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return f"{self.project.p_name} Image {self.order}"
+        return f"{self.project.p_name} - {self.title}"

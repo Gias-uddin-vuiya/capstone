@@ -1,0 +1,42 @@
+{% extends "makers_portfolio/layout.html" %}
+{% load static %}
+
+{% block title %}
+{{ image.title }} | {{ image.project.p_name }}
+{% endblock %}
+
+{% block content %}
+<section class="image-detail-section d-flex justify-content-between align-items-center px-4 py-3">
+
+  <!-- Top Controls -->
+  <div class="image-top-bar d-flex justify-content-between align-items-center px-4 py-3">
+    <div class="left-controls">
+      <!-- <button onclick="zoomIn()" class="icon-btn">＋</button>
+      <button onclick="zoomOut()" class="icon-btn">－</button> -->
+    </div>
+
+    <!-- <a href="javascript:history.back()" class="close-btn">✕</a> -->
+  </div>
+
+  <!-- Main Content -->
+  <div class="image-detail-container d-flex">
+
+    <!-- IMAGE -->
+    <div class="image-view">
+      <img 
+        id="zoomImage" 
+        src="{{ image.image.url }}" 
+        alt="{{ image.title }}"
+        style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+    </div>
+
+    <!-- INFO -->
+    <div class="image-info p-5">
+      <h2 class="mb-3">{{ image.title }}</h2>
+      <p class="text-muted">{{ image.description }}</p>
+    </div>
+
+  </div>
+
+</section>
+{% endblock %}
