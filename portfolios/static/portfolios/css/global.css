@@ -79,20 +79,20 @@ body{
   width: 100%;
 }
 
+.carousel:hover {
+  cursor: pointer;
+}
+
 .carousel-inner {
-  height: 500px; /* adjust */
+  height: 500px; 
 }
 
 .carousel-item {
   height: 100%;
 }
-
-.carousel-img {
+.carousel-item img {
   height: 100%;
-  object-fit: cover; /* or contain */
-}
-
-.carousel-indicators {
-  display: none;
+  object-fit: cover;
+  width: 100%;
 }
 

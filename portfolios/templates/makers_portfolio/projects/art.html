@@ -99,12 +99,9 @@
             <div class="carousel-inner">
                 {% for img in details.carousel_images.all %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    <img src="{{ img.image.url }}" class="d-block w-100" alt="">
-                    {% if img.caption %}
-                    <div class="carousel-caption d-none d-md-block">
-                        <p>{{ img.caption }}</p>
-                    </div>
-                    {% endif %}
+                    <a href="{% url 'project_image_detail' img.slug %}">
+                        <img src="{{ img.image.url }}" class="d-block w-100" alt="{{ img.title }}">
+                    </a>
                 </div>
                 {% endfor %}
             </div>
