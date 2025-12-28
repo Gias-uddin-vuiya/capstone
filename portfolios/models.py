@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.utils import timezone
 
 # Create your models here.
 class Profile(models.Model):
@@ -42,6 +43,9 @@ class Projects(models.Model):
     name = models.CharField(max_length=64)
     slug = models.SlugField(unique=True, null=True, blank=True)
     isActive = models.BooleanField(default=True)
+    created_at = models.DateTimeField(
+        default=timezone.now
+    )
 
     def __str__(self):
         return self.name

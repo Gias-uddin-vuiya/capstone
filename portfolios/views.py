@@ -28,9 +28,25 @@ def projects(request):
 def project_detail(request, slug):
     project = get_object_or_404(Projects, slug=slug, isActive=True)
 
+    # Ordered queryset
+    projects = list(
+        Projects.objects.filter(isActive=True).order_by("created_at")
+    )
+
+    current_index = projects.index(project)
+
+    previous_project = projects[current_index - 1] if current_index > 0 else None
+    next_project = (
+        projects[current_index + 1]
+        if current_index < len(projects) - 1
+        else None
+    )
+
     return render(request, "makers_portfolio/project_detail.html", {
         "project": project,
-        "details": project.details  # comes from OneToOneField
+        "details": project.details,
+        "previous_project": previous_project,
+        "next_project": next_project,
     })
 
 def project_image_detail(request, slug):
