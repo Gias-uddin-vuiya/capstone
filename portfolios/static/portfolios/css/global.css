@@ -52,7 +52,7 @@ body{
 }
 
 .hero-title {
-    margin-top: 20px;
+  margin-top: 20px;
   font-size: 58px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -96,3 +96,26 @@ body{
   width: 100%;
 }
 
+/* 
+ image detail page styles
+*/
+
+.left-controls {
+  font-size: 30px;
+  color: #008566;
+}
+
+.close-btn  {
+  font-size: 30px;
+  font-weight: 100px;
+  color: #008566;
+}
+.image-info {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.image-info.hidden {
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+}
