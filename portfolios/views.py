@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+
 from django.http import HttpResponse
-from .models import Profile, Porject, Projects, ProjectImage  
+from django.template.loader import render_to_string
+from weasyprint import HTML
+from django.shortcuts import get_object_or_404, render
+from .models import Profile, Porject, Projects, ProjectImage 
 
 # Create your views here.
 
@@ -55,3 +58,19 @@ def project_image_detail(request, slug):
     return render(request, "makers_portfolio/projects/image_detail.html", {
         "image": image
     })
+
+def project_pdf(request, slug):
+    project = get_object_or_404(Projects, slug=slug, isActive=True)
+    details = project.details
+
+    html_string = render_to_string(
+        "makers_portfolio/pdf/project_pdf.html",
+        {"details": details}
+    )
+
+    html = HTML(string=html_string, base_url=request.build_absolute_uri())
+    pdf = html.write_pdf()
+
+    response = HttpResponse(pdf, content_type="application/pdf")
+    response["Content-Disposition"] = f'attachment; filename="{project.slug}.pdf"'
+    return response

@@ -138,8 +138,14 @@
                         {{ details.p_bibliography_desc }}
                     </p>
 
-                    <button type="button" class="btn btn-outline-success mt-4">Download PDF</button>
-                
+                    <!-- pdf button -->
+                    <a
+                        href="{% url 'project_pdf' project.slug %}"
+                        class="btn btn-outline-success mt-4"
+                    >
+                        Download PDF
+                    </a>
+                    
                 </div>
                 <div class="right-side" >
 

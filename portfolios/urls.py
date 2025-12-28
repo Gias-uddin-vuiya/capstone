@@ -8,5 +8,6 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('projects/image/<slug:slug>/', views.project_image_detail, name='project_image_detail'),   
     path('projects/<slug:slug>/', views.project_detail, name='project_detail'),
+    path("projects/<slug:slug>/pdf/", views.project_pdf, name="project_pdf"),
     
 ]
