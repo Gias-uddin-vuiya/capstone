@@ -35,98 +35,140 @@
 
 
 {% block content %}
-    <section>
-        <div class="container">
-          <div class="part-1 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side">
-               <div class="py-4">
-                    {% include "makers_portfolio/icons/arrow.html"%}
-               </div>
-                <h1 class="mb-4" style="font-size: 64px;">{{details.p_name }}</h1>
-                <h2 class="py-3" style="font-size: 26px;">{{details.p_title }}</h2>
-                <p class="font_8 wixui-rich-text__text" >
-                    {{ details.p_desc }}
-                </p>
-                </div>
-                <div class="right-side" style="background-color: #bde4d9;">
-                    <img 
-                        src="{{ details.p_main_img.url }}" 
-                        alt="" width="490" height="1200" style="width: 703px; height: 1200px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
-                    />
-                </div>
-          </div>
+<section class="py-5">
+  <div class="container">
 
-          <div class="divider mt-3 mb-3 border border-success"></div>  
+    <!-- ================= PART 1 : INTRO ================= -->
+    <div class="row align-items-start gy-5 py-5">
 
-          <div class="part-2 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side">
-                    <h2 class="py-3">{{ details.p_goal_title }}</h2>
-                    <p class="font_8 wixui-rich-text__text" style="font-size:16px;">This is the introduction to your project. It’s where you offer an overview of the main ideas you’ll be presenting. Begin by outlining the topic you’ve chosen, and then continue by explaining your specific point of view or argument.&nbsp;<br class="wixui-rich-text__text">
-                        {{ details.p_goal_desc }}
-                    </p>
-                </div>
-                <div class="right-side" >
-                    <h2  class="py-3">{{ details.p_final_look_title }}</h2>
-                        {{ details.p_final_look_desc }}
-                    </p>
-                </div>
-          </div>
-
-          <div class="divider mt-3 mb-3 border border-success"></div>
-
-          <div class="part-3 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side" style="background-color: #fabcbc;">
-                    <img 
-                        src="{{ details.p_conclusion_img.url}}" 
-                        alt="img-not-found" 
-
-                            width="490" height="1013" style="width: 703px; height: 1014px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
-                        />
-
-                </div>
-                <div class="right-side" >
-                    <h2  class="py-3">{{ details.p_conclusion_title }}</h2>
-                    <p class="font_8 wixui-rich-text__text" style="font-size:16px;">This is the conclusion of your project. It’s where you sum up all of your main ideas and offer a final perspective. In a few sentences, review your strongest points and reinforce the assertion you made in your introduction. For the most effective conclusion, be concise, confident and focused.<br class="wixui-rich-text__text">
-                        {{ details.p_conclusion_desc }}
-                    </p>
-            </div>
-          </div>
-          
-
-          <div class="divider mt-3 mb-3 border border-success"></div>
-
-          <div class="part-3 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side" >
-                   <h2  class="py-3">{{ details.p_bibliography_title }}</h2>
-                   <p class="font_8 wixui-rich-text__text">
-                        {{ details.p_bibliography_desc }}
-                    </p>
-                    <!-- pdf button -->
-                    <a
-                        href="{% url 'project_pdf' project.slug %}"
-                        class="btn btn-outline-success mt-4"
-                    >
-                        Download PDF
-                    </a>
-                
-                </div>
-                <div class="right-side" >
-                        <img  
-                            class="pb-3"
-                            loading="lazy" sizes="467px" 
-                            id="img_comp-l2da24bu" 
-                            src="{{ details.p_bibliography_img_1.url }}" 
-                            alt="" class="BI8PVQ Tj01hh" width="467" height="263" style="object-fit: cover;"
-                        />
-            </div>
-          </div>
-
-
-          <div class="divider mt-3 mb-3 border border-success"></div>
-          
-         {% include "makers_portfolio/share/project_navigation.html" %}
-          <div>
+      <!-- LEFT CONTENT -->
+      <div class="col-12 col-md-6">
+        <div class="mb-4">
+          {% include "makers_portfolio/icons/arrow.html" %}
         </div>
-    </section>
-    
+
+        <h1 class="display-5  mb-4">
+          {{ details.p_name }}
+        </h1>
+
+        <h2 class="fs-4 mb-3">
+          {{ details.p_title }}
+        </h2>
+
+        <p class="fs-6">
+          {{ details.p_desc }}
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-12 col-md-6">
+        <div class="p-3" style="background-color:#bde4d9;">
+          <img 
+            src="{{ details.p_main_img.url }}"
+            alt="Main project image"
+            class="img-fluid w-100"
+            style="object-fit: cover;"
+          >
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-success">
+
+    <!-- ================= PART 2 : GOAL + FINAL LOOK ================= -->
+    <div class="row gy-5 py-5">
+
+      <div class="col-12 col-md-6">
+        <h2 class="mb-3">
+          {{ details.p_goal_title }}
+        </h2>
+        <p class="fs-6">
+          {{ details.p_goal_desc }}
+        </p>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="mb-3">
+          {{ details.p_final_look_title }}
+        </h2>
+        <p class="fs-6">
+          {{ details.p_final_look_desc }}
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="border-success">
+
+    <!-- ================= PART 3 : CONCLUSION ================= -->
+    <div class="row align-items-start gy-5 py-5">
+
+      <!-- IMAGE -->
+      <div class="col-12 col-md-6 order-2 order-md-1">
+        <div class="p-3" style="background-color:#fabcbc;">
+          <img 
+            src="{{ details.p_conclusion_img.url }}"
+            alt="Conclusion image"
+            class="img-fluid w-100"
+            style="object-fit: cover;"
+          >
+        </div>
+      </div>
+
+      <!-- TEXT -->
+      <div class="col-12 col-md-6 order-1 order-md-2">
+        <h2 class="mb-3">
+          {{ details.p_conclusion_title }}
+        </h2>
+        <p class="fs-6">
+          {{ details.p_conclusion_desc }}
+        </p>
+      </div>
+
+    </div>
+
+    <hr class="border-success">
+
+    <!-- ================= PART 4 : BIBLIOGRAPHY ================= -->
+    <div class="row align-items-start gy-5 py-5">
+
+      <!-- LEFT -->
+      <div class="col-12 col-md-6">
+        <h2 class="mb-3">
+          {{ details.p_bibliography_title }}
+        </h2>
+
+        <p class="fs-6">
+          {{ details.p_bibliography_desc }}
+        </p>
+
+        <a 
+          href="{% url 'project_pdf' project.slug %}"
+          class="btn btn-outline-success mt-4"
+        >
+          Download PDF
+        </a>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-12 col-md-6 text-center text-md-end">
+        <img 
+          src="{{ details.p_bibliography_img_1.url }}"
+          alt="Bibliography image"
+          class="img-fluid"
+          style="max-width: 480px;"
+        >
+      </div>
+
+    </div>
+
+    <hr class="border-success">
+
+    <!-- ================= NAVIGATION ================= -->
+    {% include "makers_portfolio/share/project_navigation.html" %}
+
+  </div>
+</section>
+
 {% endblock %}

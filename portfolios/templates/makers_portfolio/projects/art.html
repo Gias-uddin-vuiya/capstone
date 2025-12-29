@@ -35,98 +35,151 @@
 
 
 {% block content %}
-    <section>
-        <div class="container">
-          <div class="part-1 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side">
-               <div class="py-4">
-                    {% include "makers_portfolio/icons/arrow.html"%}
-               </div>
-                <h1 class="mb-4" style="font-size: 64px;">{{details.p_name }}</h1>
-                <h2 class="py-3" style="font-size: 26px;">{{details.p_title }}</h2>
-                <p class="font_8 wixui-rich-text__text" >
-                    {{ details.p_desc }}
-                </p>
-                </div>
-                <div class="right-side" style="background-color: #e7c4fb;">
-                    <img 
-                        src="{{ details.p_main_img.url }}" 
-                        alt="" width="490" height="1200" style="width: 703px; height: 1200px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"
-                    />
-                </div>
-          </div>
+<section class="py-5">
+  <div class="container">
 
-          <div class="divider mt-3 mb-3 border border-success"></div>  
+    <!-- ================= PART 1 : INTRO ================= -->
+    <div class="row align-items-start gy-5 py-5">
 
-          <div class="part-2 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side">
-                    <h2 class="py-3">{{ details.p_goal_title }}</h2>
-                    <p class="font_8 wixui-rich-text__text" style="font-size:16px;">This is the introduction to your project. It’s where you offer an overview of the main ideas you’ll be presenting. Begin by outlining the topic you’ve chosen, and then continue by explaining your specific point of view or argument.&nbsp;<br class="wixui-rich-text__text">
-                        {{ details.p_goal_desc }}
-                    </p>
-                </div>
-                <div class="right-side" >
-                    <h2  class="py-3">{{ details.p_final_look_title }}</h2>
-                        {{ details.p_final_look_desc }}
-                    </p>
-                </div>
-          </div>
-
-          <div class="divider mt-3 mb-3 border border-success"></div>
-
-          <div class="part-3 py-5 d-flex justify-content-between align-items-start gap-5">
-                <div class="left-side" >
-                    <img  
-                        class="pb-3"
-                        loading="lazy" sizes="467px" 
-                        id="img_comp-l2da24bu" 
-                        src="{{ details.p_bibliography_img_1.url }}" 
-                        alt="" class="BI8PVQ Tj01hh" width="600" height="600" style="object-fit: cover; background-color: #ff5c46;"
-                    />
-                </div>
-                <div class="right-side" >
-                    <h2  class="py-3">{{ details.p_bibliography_title }}</h2>
-                   <p class="font_8 wixui-rich-text__text">
-                        {{ details.p_bibliography_desc }}
-                    </p>
-                    <!-- pdf button -->
-                    <a
-                        href="{% url 'project_pdf' project.slug %}"
-                        class="btn btn-outline-success mt-4"
-                    >
-                        Download PDF
-                    </a>
-            </div>
-          </div>
-
-        <div class="divider mt-3 mb-3 border border-success"></div>
-
-        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                {% for img in details.carousel_images.all %}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                    <a href="{% url 'project_image_detail' img.slug %}">
-                        <img src="{{ img.image.url }}" class="d-block w-100" alt="{{ img.title }}">
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+      <!-- LEFT CONTENT -->
+      <div class="col-12 col-md-6">
+        <div class="mb-4">
+          {% include "makers_portfolio/icons/arrow.html" %}
         </div>
 
-        <div class="divider mt-3 mb-3 border border-success"></div>
+        <h1 class="display-5 mb-4">
+          {{ details.p_name }}
+        </h1>
 
-        {% include "makers_portfolio/share/project_navigation.html" %}
+        <h2 class="fs-4 mb-3">
+          {{ details.p_title }}
+        </h2>
 
-          <div>
+        <p class="fs-6">
+          {{ details.p_desc }}
+        </p>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="col-12 col-md-6">
+        <div class="p-3" style="background-color:#e7c4fb;">
+          <img
+            src="{{ details.p_main_img.url }}"
+            alt="Project main image"
+            class="img-fluid w-100"
+            style="object-fit: cover;"
+          >
         </div>
-    </section>
-    
+      </div>
+
+    </div>
+
+    <div class="divider mt-3 mb-3 border border-success"></div>
+
+    <!-- ================= PART 2 : GOAL + FINAL LOOK ================= -->
+    <div class="row gy-5 py-5">
+
+      <div class="col-12 col-md-6">
+        <h2 class="mb-3">
+          {{ details.p_goal_title }}
+        </h2>
+
+        <p class="fs-6">
+          {{ details.p_goal_desc }}
+        </p>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <h2 class="mb-3">
+          {{ details.p_final_look_title }}
+        </h2>
+
+        <p class="fs-6">
+          {{ details.p_final_look_desc }}
+        </p>
+      </div>
+
+    </div>
+
+    <div class="divider mt-3 mb-3 border border-success"></div>
+
+    <!-- ================= PART 3 : BIBLIOGRAPHY + IMAGE ================= -->
+    <div class="row align-items-start gy-5 py-5">
+
+      <!-- IMAGE -->
+      <div class="col-12 col-md-6 order-2 order-md-1 text-center">
+        <img
+          src="{{ details.p_bibliography_img_1.url }}"
+          alt="Bibliography image"
+          class="img-fluid"
+          style="max-width: 600px; background-color:#ff5c46; object-fit: cover;"
+        >
+      </div>
+
+      <!-- TEXT -->
+      <div class="col-12 col-md-6 order-1 order-md-2">
+        <h2 class="mb-3">
+          {{ details.p_bibliography_title }}
+        </h2>
+
+        <p class="fs-6">
+          {{ details.p_bibliography_desc }}
+        </p>
+
+        <a
+          href="{% url 'project_pdf' project.slug %}"
+          class="btn btn-outline-success mt-4"
+        >
+          Download PDF
+        </a>
+      </div>
+
+    </div>
+
+    <div class="divider mt-3 mb-3 border border-success"></div>
+
+    <!-- ================= CAROUSEL ================= -->
+    <div class="py-5">
+
+      <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+
+          {% for img in details.carousel_images.all %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <a href="{% url 'project_image_detail' img.slug %}">
+              <img
+                src="{{ img.image.url }}"
+                class="d-block w-100 img-fluid"
+                alt="{{ img.title }}"
+                style="max-height: 80vh; object-fit: contain;"
+              >
+            </a>
+          </div>
+          {% endfor %}
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+          data-bs-target="#projectCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+          data-bs-target="#projectCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="divider mt-3 mb-3 border border-success"></div>
+
+    <!-- ================= PROJECT NAVIGATION ================= -->
+    {% include "makers_portfolio/share/project_navigation.html" %}
+
+  </div>
+</section>
+
 {% endblock %}
