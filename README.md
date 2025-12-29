@@ -57,8 +57,20 @@ Although JavaScript is used minimally, this was intentional. The project priorit
 1. Clone the repository
 2. Create and activate a virtual environment
 3. Install dependencies:
-
     ```bash
     pip install -r requirements.txt
     ```
 
+4. Run migrations:
+    ```bash
+    python manage.py migrate
+    ```
+
+5. Run migrations:
+    ```bash
+    python manage.py runserver
+    ```
+6. Visit http://127.0.0.1:8000/
+
+## Additional Information 
+Makers Profile reflects not only my technical skills, but also my ability to plan, iterate, and build systems with long-term goals in mind. This project will continue to evolve as I add new work and refine how my projects are presented academically and professionally.
