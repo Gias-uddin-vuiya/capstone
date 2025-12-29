@@ -11,39 +11,55 @@
 
 
 {% block content %}
-    <section class="vh-100 w-100 position-relative d-flex align-items-center justify-content-center overflow-hidden" style="background-color: #007a5a;">
-    
-    <img 
-        src="{% static 'portfolios/images/projects-page-img.png' %}" 
-        alt="Project Image"
-        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;  z-index: 1;"
-    >
+<section 
+  class="min-vh-100 w-100 position-relative d-flex align-items-center justify-content-center overflow-hidden"
+  style="background-color: #007a5a;"
+>
 
-    <div class="position-absolute top-0 start-50 translate-middle-x mt-4" style="z-index: 10;">
-        <a href="{% url 'project' %}" class="text-white text-decoration-none fs-2 fw-bold">×</a>
-    </div>
+  <!-- Background Image -->
+  <img 
+    src="{% static 'portfolios/images/projects-page-img.png' %}" 
+    alt="Project Background"
+    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+    style="z-index: 1;"
+  >
 
-    <div class="container position-relative" style="z-index: 5;">
-        <ul class="nav justify-content-center gap-5">
-            <li class="nav-item">
-                <a class="nav-link text-black fs-5 fw-light p-0" href="{% url 'index' %}">Home</a>
-            </li>
+  <!-- Close Button -->
+  <a 
+    href="{% url 'project' %}" 
+    class="position-absolute pt-5 top-0 end-50% m-3 text-white text-decoration-none fs-2 fw-bold"
+    style="z-index: 10;"
+    aria-label="Close"
+  >
+    &times;
+  </a>
 
-            <!-- I  will add the projects dinamically later on -->
-            {% for project in projects %}
-                <li class="nav-item">
-                    <a 
-                        class="nav-link text-white fs-5 fw-light p-0" 
-                        href="{% url 'project_detail' project.slug %}"
-                        >{{ project.name }}
-                        
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+  <!-- Navigation -->
+  <div class="container position-relative" style="z-index: 5;">
+    <ul class="nav justify-content-center flex-wrap gap-3 gap-md-5 text-center">
+
+      <li class="nav-item">
+        <a class="nav-link text-black fs-5 fw-light p-0" href="{% url 'index' %}">
+          Home
+        </a>
+      </li>
+
+      {% for project in projects %}
+        <li class="nav-item">
+          <a 
+            class="nav-link text-white fs-5 fw-light p-0"
+            href="{% url 'project_detail' project.slug %}"
+          >
+            {{ project.name }}
+          </a>
+        </li>
+      {% endfor %}
+
+    </ul>
+  </div>
 
 </section>
+
 {% endblock %}
 
 {% block footer %}
